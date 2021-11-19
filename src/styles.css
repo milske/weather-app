@@ -25,11 +25,14 @@ img {
   width: 60%;
 }
 
+.weather-wrapper {
+  margin: 30px auto;
+  max-width: 500px;
+}
+
 .weather {
-  margin-top: 20px;
   border: 1px solid;
   border-radius: 30px;
-  max-width: 500px;
   background: radial-gradient(
     circle at 7.5% 24%,
     rgb(237, 161, 193) 0%,
@@ -38,6 +41,7 @@ img {
     rgb(215, 248, 247) 93.8%
   );
 }
+
 .days {
   font-size: 15px;
   padding: 10px 10px;
@@ -45,5 +49,4 @@ img {
 }
 
 .url {
-  padding: 20px 100px;
 }

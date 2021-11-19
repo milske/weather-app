@@ -16,69 +16,71 @@
   </head>
   <body>
     <div class="container">
-      <div class="weather">
-        <form class="search" id="search">
-          <div class="col-9">
-            <input
-              id="query"
-              placeholder="Enter a city"
-              type="search"
-              autofocus="on"
-              autocomplete="off"
-            />
+      <div class="weather-wrapper">
+        <div class="weather">
+          <form class="search" id="search">
+            <div class="col-9">
+              <input
+                id="query"
+                placeholder="Enter a city"
+                type="search"
+                autofocus="on"
+                autocomplete="off"
+              />
+            </div>
+            <div class="col-3">
+              <input
+                type="submit"
+                value="Search"
+                class="form-control btn btn-primary shadow-sm"
+              />
+            </div>
+          </form>
+          <br />
+          <div class="row">
+            <div class="col-6">
+              <h1>
+                <div id="currentCity">Barcelona</div>
+                <div id="temperature">21 °C |°F</div>
+                <div>Partly Cloudy</div>
+                <div>⛅</div>
+              </h1>
+            </div>
+            <div class="col-6">
+              <h2>
+                <div id="date"></div>
+                <div>17th Oct</div>
+                <div>Humidity 77%</div>
+                <div>Rain 0%</div>
+              </h2>
+            </div>
           </div>
-          <div class="col-3">
-            <input
-              type="submit"
-              value="Search"
-              class="form-control btn btn-primary shadow-sm"
-            />
-          </div>
-        </form>
-        <br />
-        <div class="row">
-          <div class="col-6">
-            <h1>
-              <div id="currentCity">Barcelona</div>
-              <div id="temperature">21 °C</div>
-              <div>Partly Cloudy</div>
-              <div>⛅</div>
-            </h1>
-          </div>
-          <div class="col-6">
-            <h2>
-              <div id="date"></div>
-              <div>17th Oct</div>
-              <div>Humidity 77%</div>
-              <div>Rain 0%</div>
-            </h2>
+          <hr />
+          <div class="days">
+            <div class="row">
+              <div class="col">Tomorrow</div>
+              <div class="col">Tuesday</div>
+              <div class="col">Wednesday</div>
+              <div class="col">Thursday</div>
+              <div class="col">Friday</div>
+            </div>
+            <div class="row">
+              <div class="col">22 °C ⛅</div>
+              <div class="col">23 °C ⛅</div>
+              <div class="col">23 °C ⛅</div>
+              <div class="col">22 °C 🌧</div>
+              <div class="col">20 °C 🌧</div>
+            </div>
           </div>
         </div>
-        <hr />
-        <div class="days">
-          <div class="row">
-            <div class="col">Tomorrow</div>
-            <div class="col">Tuesday</div>
-            <div class="col">Wednesday</div>
-            <div class="col">Thursday</div>
-            <div class="col">Friday</div>
-          </div>
-          <div class="row">
-            <div class="col">22 °C ⛅</div>
-            <div class="col">23 °C ⛅</div>
-            <div class="col">23 °C ⛅</div>
-            <div class="col">22 °C 🌧</div>
-            <div class="col">20 °C 🌧</div>
-          </div>
-        </div>
-        <img src="media/clouds.jpg" alt="clouds" width="500px" />
+        <span class="url">
+          <a href="https://github.com/milske/weather-app" target="_blank"
+            >Open source-code </a
+          >by Milla Nerg
+        </span>
       </div>
     </div>
+
     <script src="src/index.js"></script>
-    <span class="url">
-      <a href="https://github.com/milske/weather-app" target="_blank"
-        >Open source-code </a
-      >by Milla Nerg
-    </span>
   </body>
 </html>
