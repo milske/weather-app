@@ -17,6 +17,10 @@ h2 {
   width: 100%;
 }
 
+h1 {
+  text-transform: capitalize;
+}
+
 img {
   display: block;
   margin: 0 auto;
@@ -46,7 +50,4 @@ img {
   font-size: 15px;
   padding: 10px 10px;
   text-align: center;
-}
-
-.url {
 }
