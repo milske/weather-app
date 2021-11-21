@@ -17,7 +17,7 @@ h2 {
   width: 100%;
 }
 
-h1 {
+.h1 first-letter {
   text-transform: capitalize;
 }
 
