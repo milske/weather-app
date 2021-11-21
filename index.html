@@ -19,13 +19,15 @@
       <div class="weather-wrapper">
         <div class="weather">
           <form class="search" id="search">
-            <div class="col-9">
+            <div class="row">
+              <div class="col-9">
               <input
                 id="query"
                 placeholder="Enter a city"
                 type="search"
                 autofocus="on"
                 autocomplete="off"
+                class= "form-control"
               />
             </div>
             <div class="col-3">
@@ -35,13 +37,14 @@
                 class="form-control btn btn-primary shadow-sm"
               />
             </div>
+          </div>
           </form>
           <br />
           <div class="row">
             <div class="col-6">
               <h1>
-                <div id="currentCity"></div>
-                <div id="temperature">°C |°F</div>
+                <div id="currentCity">City:</div>
+                <div id="temperature">Temperature: °C |°F</div>
                 <div id="description"></div>
                 <img src="" alt="weather-pic" id= "icon">
               </h1>
