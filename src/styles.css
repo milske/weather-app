@@ -21,14 +21,6 @@ h2 {
   text-transform: capitalize;
 }
 
-img {
-  display: block;
-  margin: 0 auto;
-  padding-top: 30px;
-  padding-bottom: 20px;
-  width: 60%;
-}
-
 .weather-wrapper {
   margin: 30px auto;
   max-width: 500px;
@@ -46,7 +38,7 @@ img {
   );
 }
 
-.days {
+.forecast {
   font-size: 15px;
   padding: 10px 10px;
   text-align: center;
