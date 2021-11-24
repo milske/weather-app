@@ -14,6 +14,33 @@ let days = [
   "Saturday",
 ];
 
+function showForecast() {
+  let forecast = document.querySelector("#forecast");
+
+  let forecastHTML = `<div class ="row">`;
+  let days = ["Thu", "Fri", "Sat", "Sun"];
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      ` 
+              <div class="col-2">
+                <div class="forecast-day">${day}</div>
+                <img
+                  src="https://openweathermap.org/img/wn/04n@2x.png"
+                  alt="forecast-pic"
+                  width="40"
+                />
+                <div class="forecast-temperatures">
+                  <span class="temperature-max"> 18 </span>
+                  <span class="temperature-min"> 12 </span>
+                </div>
+              </div>
+            `;
+  });
+  forecastHTML = forecastHTML + `</div>`;
+  forecast.innerHTML = forecastHTML;
+}
+
 let weekday = days[day];
 currentDate.innerHTML = `${weekday} ${hours}:${minutes}`;
 
@@ -70,3 +97,5 @@ celciusLink.addEventListener("click", showCelciusTemperature);
 
 let search = document.querySelector("#search");
 search.addEventListener("submit", searchCity);
+
+showForecast();
