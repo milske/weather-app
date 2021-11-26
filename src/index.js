@@ -14,6 +14,17 @@ let days = [
   "Saturday",
 ];
 
+let weekday = days[day];
+currentDate.innerHTML = `${weekday} ${hours}:${minutes}`;
+
+function formatDay(timestamp) {
+  let date = new Date(timestamp * 1000);
+  let day = date.getDay();
+  let days = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+
+  return days[day];
+}
+
 function showForecast(response) {
   let forecastDays = response.data.daily;
 
@@ -21,30 +32,35 @@ function showForecast(response) {
 
   let forecastHTML = `<div class ="row">`;
 
-  forecastDays.forEach(function (forecastDay) {
-    forecastHTML =
-      forecastHTML +
-      ` 
+  forecastDays.forEach(function (forecastDay, index) {
+    if (index < 5) {
+      forecastHTML =
+        forecastHTML +
+        ` 
               <div class="col-2">
-                <div class="forecast-day">${forecastDay.dt}</div>
+                <div class="forecast-day">${formatDay(forecastDay.dt)}</div>
                 <img
-                  src="https://openweathermap.org/img/wn/${forecastDay.weather[0].icon}@2x.png"
+                  src="https://openweathermap.org/img/wn/${
+                    forecastDay.weather[0].icon
+                  }@2x.png"
                   alt="forecast-pic"
                   width="40"
                 />
                 <div class="forecast-temperatures">
-                  <span class="temperature-max"> ${forecastDay.temp.max} </span>
-                  <span class="temperature-min"> ${forecastDay.temp.min} </span>
+                  <span class="temperature-max"> ${Math.round(
+                    forecastDay.temp.max
+                  )}° </span>
+                  <span class="temperature-min"> ${Math.round(
+                    forecastDay.temp.min
+                  )}° </span>
                 </div>
               </div>
             `;
+    }
   });
   forecastHTML = forecastHTML + `</div>`;
   forecast.innerHTML = forecastHTML;
 }
-
-let weekday = days[day];
-currentDate.innerHTML = `${weekday} ${hours}:${minutes}`;
 
 function getForecast(coordinates) {
   let apiKey = "e9749c87f79d989e0dfa640ff0c29863";
