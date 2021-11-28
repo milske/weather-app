@@ -41,28 +41,31 @@
           <br />
           <div class="row">
             <div class="col-6">
-              <h1>
-                <div id="city">CITY</div>
+              <div class="info">
+                <h1>
+                  <div id="city"></div>
+                </h1>
                 <div>
-                  <strong id="temperature"></strong>
+                  <strong id="temperature" class="temperature"></strong>
                   <span class="units"> °C </span>
                 </div>
-                <div id="description"></div>
-                <img src="" alt="weather-pic" id="icon" />
-              </h1>
+                <div class="details">
+                  <div>Humidity: <span id="humidity"></span>%</div>
+                  <div>Wind: <span id="wind"></span>Km/h</div>
+                </div>
+              </div>
             </div>
             <div class="col-6">
-              <h2>
-                <div id="date"></div>
-                <div>Humidity: <span id="humidity"></span>%</div>
-                <div>Wind: <span id="wind"></span>Km/h</div>
-              </h2>
+              <div class="infos">
+                <div id="date" class="date"></div>
+                <div id="description" class="description"></div>
+                <img src="" alt="weather-pic" id="icon" />
+              </div>
             </div>
           </div>
-          <hr />
           <div class="forecast" id="forecast"></div>
         </div>
-        <span>
+        <span class="link">
           <a href="https://github.com/milske/weather-app" target="_blank"
             >Open source-code </a
           >by Milla Nerg
