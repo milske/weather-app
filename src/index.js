@@ -2,7 +2,14 @@ let currentDate = document.querySelector("#date");
 let now = new Date();
 
 let hours = now.getHours();
+if (hours < 10) {
+  hours = `0${hours}`;
+}
+
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 let day = now.getDay();
 let days = [
   "Sunday",
@@ -33,7 +40,7 @@ function showForecast(response) {
   let forecastHTML = `<div class ="row">`;
 
   forecastDays.forEach(function (forecastDay, index) {
-    if (index < 5) {
+    if (index < 6) {
       forecastHTML =
         forecastHTML +
         ` 
@@ -70,7 +77,7 @@ function getForecast(coordinates) {
 }
 
 function showWeather(response) {
-  document.querySelector("#currentCity").innerHTML = response.data.name;
+  document.querySelector("#city").innerHTML = response.data.name;
   document.querySelector("#temperature").innerHTML = Math.round(
     response.data.main.temp
   );
@@ -92,16 +99,20 @@ function showWeather(response) {
   getForecast(response.data.coord);
 }
 
-function searchCity(event) {
-  event.preventDefault();
-  let city = document.querySelector("#query").value;
+function search(city) {
   let apiKey = "e9749c87f79d989e0dfa640ff0c29863";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
 
   axios.get(apiUrl).then(showWeather);
 }
 
-let search = document.querySelector("#search");
-search.addEventListener("submit", searchCity);
+function handleSubmit(event) {
+  event.preventDefault();
+  let city = document.querySelector("#query");
+  search(city.value);
+}
 
-searchCity("New York");
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleSubmit);
+
+search("Barcelona");

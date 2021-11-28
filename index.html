@@ -18,14 +18,13 @@
     <div class="container">
       <div class="weather-wrapper">
         <div class="weather">
-          <form class="search" id="search">
+          <form id="search-form">
             <div class="row">
               <div class="col-9">
                 <input
                   id="query"
                   placeholder="Enter a city"
                   type="search"
-                  autofocus="on"
                   autocomplete="off"
                   class="form-control"
                 />
@@ -43,7 +42,7 @@
           <div class="row">
             <div class="col-6">
               <h1>
-                <div id="currentCity">CITY</div>
+                <div id="city">CITY</div>
                 <div>
                   <strong id="temperature"></strong>
                   <span class="units"> °C </span>
@@ -55,7 +54,6 @@
             <div class="col-6">
               <h2>
                 <div id="date"></div>
-                <div>17th Oct</div>
                 <div>Humidity: <span id="humidity"></span>%</div>
                 <div>Wind: <span id="wind"></span>Km/h</div>
               </h2>
